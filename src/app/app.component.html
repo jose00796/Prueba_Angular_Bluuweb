@@ -1,7 +1,10 @@
-<h1 class="container bg-dark text-white text-center my-4 py-4">NGIF show = {{show}}</h1>
+<h1 class="container bg-dark text-white text-center my-4 py-4">[NGCLASS] = {{activo}}</h1>
   <div class="container">
-    <button class="btn btn-warning" (click)="show=!show">Accion</button>
-      <p class="text-info" *ngIf = "show; else showDos" >
+
+    <button class="btn btn-dark mb-3" (click)="activo='primero'">Homero</button>
+    <button class="btn btn-danger mb-3" (click)="activo='segundo'">Rick</button>
+
+      <p class="text-primary d-none" [ngClass]="{'d-block':activo == 'primero'}">
         Básicamente, Homer es una sátira de los norteamericanos promedio, en palabras de su mismo creador Matt Groening.
         Las bromas indirectas se pueden encontrar en su personalidad, su actitud, su filosofía, su idiosincrasia, etc.
         Los rasgos esenciales de la personalidad de Homer se presentaron desde sus inicios. No se sabe bien donde nació,
@@ -10,12 +13,11 @@
         Más tarde Homer entra en un campamento, junto con Lenny Leonard, Carl Carlson y Moe Szyslak.
       </p>
 
-      <ng-template #showDos>
-        <p class="text-danger">
+        <p class="text-danger d-none" [ngClass] = "{'d-block':activo == 'segundo'}">
           Rick Sánchez es uno de los protagonistas de la serie animada para adultos producida por Adult Swim: Rick and Morty.
           Es un científico con problemas de alcoholismo, tiene 60 años, no se sabe tanto de su vida,
           casi siempre salva al mundo pero el también a veces ocasiona los problemas.
           Al parecer abandonó a su hija y a su esposa, ya que en la serie se menciona que no ha aparecido desde hace 20 años.
+          Al parecer abandonó a su hija y a su esposa, ya que en la serie se menciona que no ha aparecido desde hace 20 años.
         </p>
-      </ng-template>
   </div>

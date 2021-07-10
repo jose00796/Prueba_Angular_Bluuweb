@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-app';
-  show:boolean = false;
+  show:boolean = true;
+  activo:string = '';
 }
